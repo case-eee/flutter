@@ -1,0 +1,17 @@
+<%= form_for(@chatter) do |f| %>
+  <% if @chatter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chatter.errors.count, "error") %> prohibited this chatter from being saved:</h2>
+
+      <ul>
+      <% @chatter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
